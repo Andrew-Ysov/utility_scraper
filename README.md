@@ -13,7 +13,7 @@
 
 Нужно использовать telegram API
 
-Для этого нужно зарегистрироваться по [ссылке] (https://my.telegram.org/apps)
+Для этого нужно зарегистрироваться по [ссылке](https://my.telegram.org/apps)
 
 И получить App api_id, App api_hash, которые нужно будет сохранить строками в переменных my_api_id, my_api_hash в файле personal_data
 
