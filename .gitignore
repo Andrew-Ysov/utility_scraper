@@ -1,3 +1,4 @@
 personal_data.py
 test.py
 *.pyc
+*.session
