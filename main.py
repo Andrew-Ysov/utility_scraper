@@ -5,8 +5,8 @@ import smtplib as smtp
 from email.mime.text import MIMEText
 from email.header import Header
 
-api_id = my_api_id
-api_hash = my_api_hash
+API_ID = my_api_id
+API_HASH = my_api_hash
 
 login = my_email
 password = my_email_password
@@ -30,8 +30,8 @@ def is_my_adress_in_text(text: str, my_adresses: set):
     return
 
 # Парсинг limit_of_posts сообщений из группы по ссылке link
-async def parser(api_id, api_hash, num_posts, my_adresses, link):
-    client = TelegramClient('session name', api_id, api_hash)
+async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
+    client = TelegramClient('session name', API_ID, API_HASH)
 
     await client.start()
 
@@ -54,4 +54,4 @@ async def parser(api_id, api_hash, num_posts, my_adresses, link):
     
 
 if __name__ == '__main__':
-    asyncio.run(parser(api_id, api_hash, limit_of_posts, my_adresses, link))
+    asyncio.run(parser(API_ID, API_HASH, limit_of_posts, my_adresses, link))
