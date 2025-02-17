@@ -36,6 +36,8 @@ def is_my_adress_in_text(text: str, my_adresses: set):
 # Парсинг limit_of_posts сообщений из группы по ссылке link
 async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
     client = TelegramClient('session name', API_ID, API_HASH)
+async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
+    client = TelegramClient('session name', API_ID, API_HASH)
 
     await client.start()
 
@@ -59,4 +61,5 @@ async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
     
 
 if __name__ == '__main__':
+    asyncio.run(parser(API_ID, API_HASH, limit_of_posts, my_adresses, link))
     asyncio.run(parser(API_ID, API_HASH, limit_of_posts, my_adresses, link))
