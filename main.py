@@ -1,9 +1,11 @@
-from telethon import TelegramClient
-from personal_data import my_api_hash, my_api_id, my_email, my_email_password
 import asyncio
 import smtplib as smtp
+from telethon import TelegramClient
 from email.mime.text import MIMEText
 from email.header import Header
+
+from personal_data import my_api_hash, my_api_id, my_email, my_email_password
+
 
 API_ID = my_api_id
 API_HASH = my_api_hash
@@ -20,6 +22,7 @@ server.starttls()
 server.login(login, password)
 subject = 'Сообщение о подачи воды по адресу'
 
+
 # Поиск адреса в тексте сообщения
 def is_my_adress_in_text(text: str, my_adresses: set):
     search_space = text.split()
@@ -28,6 +31,7 @@ def is_my_adress_in_text(text: str, my_adresses: set):
         if word.rstrip(',') in my_adresses:
             return word.rstrip(',')
     return
+
 
 # Парсинг limit_of_posts сообщений из группы по ссылке link
 async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
@@ -43,7 +47,8 @@ async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
         if result:
             text = f'адрес {result} был указан в одном из постов'
         else:
-            text = f'мой адрес (мои адреса) не был(и) указан(ы) в последних {num_posts} постах'
+            text = (f'мой адрес (мои адреса) не был(и)) 
+                    указан(ы) в последних {num_posts} постах')
         
         mime = MIMEText(text, 'plain', 'utf-8')
         mime['Subject'] = Header(subject, 'utf-8')
