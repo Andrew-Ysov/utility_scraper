@@ -36,12 +36,10 @@ def is_my_adress_in_text(text: str, my_adresses: set):
 # Парсинг limit_of_posts сообщений из группы по ссылке link
 async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
     client = TelegramClient('session name', API_ID, API_HASH)
-async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
-    client = TelegramClient('session name', API_ID, API_HASH)
 
     await client.start()
 
-    messages = await client.get_messages(link, limit = num_posts)
+    messages = await client.get_messages(link, limit=num_posts)
     result = ''
     for message in messages:
         result = is_my_adress_in_text(message.text, my_adresses)
