@@ -60,4 +60,3 @@ async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
 
 if __name__ == '__main__':
     asyncio.run(parser(API_ID, API_HASH, limit_of_posts, my_adresses, link))
-    asyncio.run(parser(API_ID, API_HASH, limit_of_posts, my_adresses, link))
