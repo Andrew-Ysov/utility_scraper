@@ -30,7 +30,7 @@ def is_my_adress_in_text(text: str, my_adresses: set):
     for word in search_space:
         if word.rstrip(',') in my_adresses:
             return word.rstrip(',')
-    return
+    return None
 
 
 # Парсинг limit_of_posts сообщений из группы по ссылке link
