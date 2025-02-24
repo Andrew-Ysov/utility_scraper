@@ -14,7 +14,7 @@ login = my_email
 password = my_email_password
 
 link = 'https://t.me/NRlcjA4mJcowM2Uy'
-my_adresses = {'ул.Лазо'} # В этом сете нужно перечислить все адреса, которые нужно отслеживать
+my_adresses = {'ул.Лазо'} # It`s a set with adresses that should be observed
 limit_of_posts = 2
 
 server = smtp.SMTP('smtp.gmail.com', 587)
@@ -23,8 +23,8 @@ server.login(login, password)
 subject = 'Сообщение о подачи воды по адресу'
 
 
-# Поиск адреса в тексте сообщения
 def is_my_adress_in_text(text: str, my_adresses: set):
+    """Find my_adresses in text."""
     search_space = text.split()
 
     for word in search_space:
@@ -35,6 +35,7 @@ def is_my_adress_in_text(text: str, my_adresses: set):
 
 # Парсинг limit_of_posts сообщений из группы по ссылке link
 async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
+    """Get limit_of_posts from telegram grop in link."""
     client = TelegramClient('session name', API_ID, API_HASH)
 
     await client.start()
