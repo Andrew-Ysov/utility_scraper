@@ -48,8 +48,8 @@ async def parser(API_ID, API_HASH, num_posts, my_adresses, link):
         if result:
             text = f'адрес {result} был указан в одном из постов'
         else:
-            text = (f'мой адрес (мои адреса) не был(и)) 
-                    указан(ы) в последних {num_posts} постах')
+            text = f'мой адрес (мои адреса) не был(и) \
+                    указан(ы) в последних {num_posts} постах'
         
         mime = MIMEText(text, 'plain', 'utf-8')
         mime['Subject'] = Header(subject, 'utf-8')
